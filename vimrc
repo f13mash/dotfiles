@@ -1,1 +1,95 @@
-set number
+set number "show line numbers
+
+set guifont=Anonymous\ Pro:h12
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+"for syntax highlighting
+filetype on
+filetype plugin on
+syntax enable
+
+"for pretty!
+set background=dark
+colorscheme solarized
+
+set autoindent		"Autoindent code.... also pretty!
+set smartindent
+
+"tabs should be 4 spaces wide but actually a tab, darn it!
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+set showmode            " Show mode I'm in
+
+set showcmd             " Show command I'm typing
+
+set showmatch           " Show matching brace
+
+set hlsearch 		"Highlight search things
+
+set incsearch
+
+set ignorecase 
+set smartcase
+
+set scrolloff=3
+
+" Mode Indication -Prominent!
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline guibg=red
+    set cursorcolumn
+  elseif a:mode == 'r'
+    hi statusline guibg=blue
+  else
+    hi statusline guibg= magenta
+  endif
+endfunction
+
+function! InsertLeaveActions()
+  hi statusline guibg=green
+  set nocursorcolumn
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * call InsertLeaveActions()
+
+" to handle exiting insert mode via a control-C
+inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
+
+" default the statusline to green when entering Vim
+hi statusline guibg=green
+
+"useful status line
+set laststatus=2
+set statusline=%p - [%F]   %y
+
+" Intuitive backspacing in insert mode
+set backspace=indent,eol,start
+ 
+" File-type highlighting and configuration.
+" Run :filetype (without args) to see what you may have
+" to turn on yourself, or just set them all to be sure.
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+ 
+
+"smarter autocomplete
+set wildmenu
+set wildmode=list:longest
+
+set backupcopy=yes "to keep finder labels
+
+call pathogen#infect() "because of course vim needs package management
+
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+
