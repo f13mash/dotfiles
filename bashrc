@@ -19,7 +19,7 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 # So many aliases, I have to put them elsewhere!
 source ~/dotfiles/bash_aliases
 
-export PS1="\e]2;MacBook - @\u\a\e[36;44mJuarez\e[36;40m \w \$ \e[0m"
+export PS1="\e]2;@\u\[\a\033[38;05;24mJuarez\033[38;05;73m \w \033[38;05;24m\$ \e[0m\]"
 
 export TERM=xterm-256color
 
