@@ -19,6 +19,9 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 # So many aliases, I have to put them elsewhere!
 source ~/dotfiles/bash_aliases
 
+# For work!
+source ~/dotfiles/mintty/mintty-solarized-dark.sh
+
 export PS1="\e]2;@\u\[\a\033[38;05;24mJuarez\033[38;05;73m \w \033[38;05;24m\$ \e[0m\]"
 
 export TERM=xterm-256color

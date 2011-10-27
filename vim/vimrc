@@ -14,7 +14,7 @@ filetype plugin on
 syntax enable
 
 "for pretty!
-set guifont=Anonymous\ Pro:h12
+set guifont=Anonymous\ Pro:h16
 set background=dark
 colorscheme solarized
 

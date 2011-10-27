@@ -22,6 +22,7 @@ alias sourcerc='source ~/dotfiles/bashrc'
 alias ed='nano'
 alias cx='chmod +x'
 alias vi='vim'
+alias gitc='git commit -a'
 
 # Aliases to my own scripts
 
