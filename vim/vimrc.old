@@ -18,9 +18,6 @@ set guifont=Anonymous\ Pro:h12
 set background=dark
 colorscheme solarized
 
-set cursorline
-set number
-
 set autoindent		"Autoindent code.... also pretty!
 set smartindent
 
@@ -41,17 +38,13 @@ set incsearch
 
 set ignorecase 
 set smartcase
-set nowrap
 
 " handy scrolling
 set scrolloff=3
-noremap <Space> <PageDown>
+"noremap <Space> <PageDown>
 
 " format languages nice and all
 autocmd FileType css set smartindent
-
-"useful status line
-"set laststatus=2
 
 " Mode Indication -Prominent!
 function! InsertStatuslineColor(mode)
@@ -59,14 +52,14 @@ function! InsertStatuslineColor(mode)
     hi statusline guibg=red
     set cursorcolumn
   elseif a:mode == 'r'
-    hi statusline guibg=blue 
+    hi statusline guibg=blue
   else
     hi statusline guibg= magenta
   endif
 endfunction
 
 function! InsertLeaveActions()
-	hi statusline guibg=green
+  hi statusline guibg=green
   set nocursorcolumn
 endfunction
 
@@ -75,16 +68,18 @@ au InsertLeave * call InsertLeaveActions()
 
 " to handle exiting insert mode via a control-C
 inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
+
 " default the statusline to green when entering Vim
 hi statusline guibg=green
 
-
-set statusline=%2*%p%%\ %1*%F\ %2*%y
+"useful status line
+set laststatus=2
+set statusline=%p - [%F]   %y
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
  
-" file-type highlighting and configuration.
+" File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
 " to turn on yourself, or just set them all to be sure.
 syntax on
@@ -97,14 +92,9 @@ set wildmode=list:longest
 
 set backupcopy=yes "to keep finder labels
 
-" call pathogen#infect() "because of course vim needs package management
+call pathogen#infect() "because of course vim needs package management
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/dotfiles/vim/vimrc
 
-" Always set your working directory to the file you're editing
-function! CHANGE_CURR_DIR()
-	let _dir = expand("%:p:h")
-	exec "cd \"" . _dir . "\""
-	unlet _dir
-endfunction
+
