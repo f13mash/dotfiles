@@ -22,7 +22,7 @@ source ~/dotfiles/bash_aliases
 # For work!
 source ~/dotfiles/mintty/mintty-solarized-dark.sh
 
-export PS1="\e]2;@\u\[\a\033[38;05;24mJuarez\033[38;05;73m \w \033[38;05;24m\$ \e[0m\]"
+export PS1="\e]2;@\u\[\a\033[38;05;73m\u \033[38;05;24m@$MYMACHINE\033[38;05;73m \w \033[38;05;24m\$ \e[0m\]"
 
 export TERM=xterm-256color
 
