@@ -707,7 +707,7 @@ exe "hi CursorColumn"   . s:fg_none   .s:bg_base02 .s:fmt_none
 exe "hi CursorLine"     . s:fg_none   .s:bg_base02 .s:fmt_uopt
 exe "hi ColorColumn"    . s:fg_none   .s:bg_base02 .s:fmt_none
 exe "hi Cursor"         . s:fg_none   .s:bg_none   .s:fmt_revr
-exe "hi lCursor"        . s:fg_none   .s:bg_none   .s:fmt_stnd
+exe "hi lCursor"        . s:fg_none   .s:bg_base02   .s:fmt_stnd
 exe "hi MatchParen"     . s:fg_red    .s:bg_base01 .s:fmt_bold
 
 "}}}

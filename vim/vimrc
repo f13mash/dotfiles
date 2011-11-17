@@ -50,8 +50,15 @@ noremap <Space> <PageDown>
 " format languages nice and all
 autocmd FileType css set smartindent
 
+" Cursors should be square in normal mode
+highlight Cursor guifg=gray
+set guicursor=n-v-c:block
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
 "useful status line
-"set laststatus=2
+set laststatus=2
 
 " Mode Indication -Prominent!
 function! InsertStatuslineColor(mode)
